@@ -3,6 +3,8 @@ package com.evelol.server;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by Administrator on 2017/2/28.
@@ -33,7 +35,9 @@ public class SingleFileHTTPServer extends Thread {
 			serverSocket = new ServerSocket(this.port);
 			System.out.println("Acceppting connections on port:" + serverSocket.getLocalPort());
 			System.out.println("Data to be send:");
-			System.out.println(this.content);
+			//System.out.println(new String(this.content));// 中文乱码
+			System.out.println(new String(this.content, Charset.forName("gb2312")));//源文件是gb2312时显示正常
+			//System.out.println(new String(this.content, StandardCharsets.UTF_8));//源文件是utf-8时显示正常
 			while (true) {
 				Socket connection = null;
 				try {
