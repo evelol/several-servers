@@ -84,7 +84,6 @@ public class NioServer {
 	
 
 	public static void main(String[] args) {
-		new Thread(new SelectThread()).start();
 		try {
 			new Thread(new AcceptThread(8081)).start();
 		} catch (IOException e) {
