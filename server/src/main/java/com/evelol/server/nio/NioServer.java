@@ -54,7 +54,7 @@ public class NioServer {
 						// if the key is marked Accept, then it has to be the server
 						// transport.
 						if (key.isAcceptable()) {
-							SocketChannel acceptSocketChannel = serverSocketChannel.accept();= serverSocketChannel.accept();
+							SocketChannel acceptSocketChannel = serverSocketChannel.accept();
 							SelectionKey clientKey = acceptSocketChannel.register(selector, SelectionKey.OP_READ);
 						} else if (key.isReadable()) {
 
