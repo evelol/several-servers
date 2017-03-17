@@ -1,6 +1,7 @@
 package com.evelol.server;
 
 import java.io.*;
+import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -31,9 +32,14 @@ public class FileLab {
 			}
 		}
 		// FileFilter
-		file();
+		//file();
 		//processorIo();
-		stream();
+		//stream();
+		String o = (String)System.getProperty("sun.jnu.encoding");//GBK
+		System.out.println(o+"aaa");
+		System.out.println(System.getProperty("file.encoding")+"bbb");//UTF-8
+
+		Charset.availableCharsets();
 	}
 	public static void file() throws IOException {
 		File baseFile = new File("c:\\");
@@ -55,8 +61,7 @@ public class FileLab {
 		Properties properties = System.getProperties();
 		properties.list(System.out);
 		//sun.jnu.encoding
-		String o = (String)System.getProperties().get("sun.jnu.encoding");
-		System.out.println(o);
+
 
 
 	}
@@ -109,6 +114,8 @@ public class FileLab {
 		FileInputStream fileInputStream = new FileInputStream("c:\\test.txt");
 
 		System.out.println("-----------------------------------------");
+
+
 
 
 
