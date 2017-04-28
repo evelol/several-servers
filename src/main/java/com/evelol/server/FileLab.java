@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class FileLab {
 	public static void main(String[] args) throws Exception {
 		System.out.println(File.pathSeparator);
-		System.out.println("change");
+		System.out.println("chan");
 		System.out.println(File.separator);
 		System.out.println(File.separatorChar);
 		System.out.println(File.pathSeparatorChar);
