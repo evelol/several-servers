@@ -1,0 +1,37 @@
+// https://github.com/brookhong/Surfingkeys#search-selected-with
+// an example to create a new mapping `ctrl-y`
+mapkey('<Ctrl-y>', 'Show me the money', function() {
+    Front.showPopup('a well-known phrase uttered by characters in the 1996 film Jerry Maguire (Escape to close).');
+});
+
+// an example to replace `u` with `?`, click `Deault mappings` to see how `u` works.
+//map('?', 'u');
+map('u', 'e');
+mapkey('p', "Open the clipboard's URL in the current tab", function() {
+    Normal.getContentFromClipboard(function(response) {
+        window.location.href = response.data;
+    });
+});
+map('P', 'cc');
+map('gi', 'i');
+map('F', 'af');
+map('gf', 'w');
+map('`', '\'');
+// save default key `t` to temp key `>_t`
+map('>_t', 't');
+// create a new key `t` for default key `on`
+map('t', 'on');
+// create a new key `o` for saved temp key `>_t`
+map('o', '>_t');
+map('H', 'S');
+map('L', 'D');
+map('gt', 'R');
+map('gT', 'E');
+map('K', 'R');
+map('J', 'E');
+mapkey('<Space>', 'Choose a tab with omnibar', 'Front.openOmnibar({type: "Tabs"})');
+cmap('<PageUp>', '<Ctrl-,>');
+cmap('<PageDown>', '<Ctrl-.>');
+settings.omnibarMaxResults = 100;
+settings.defaultSearchEngine = 'g';
+settings.tabsThreshold = 1;
